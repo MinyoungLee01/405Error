@@ -931,3 +931,24 @@ section {
     font-weight: 600;
     line-height: 40px;
 }
+
+/* 유영 */
+.youyoung .uowrap {
+    max-width: 1050px;
+    height: auto;
+    display: flex;
+    background-color: #f5fdc7;
+    margin: 0 auto;
+}
+
+.youyoung .uouo {
+    max-width: 500px;
+    height: auto;
+    text-align: center;
+}
+.youyoung .uouo h2 {
+    color: orange;
+}
+.youyoung img {
+    object-fit: contain;
+}
