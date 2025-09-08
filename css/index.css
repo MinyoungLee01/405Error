@@ -933,8 +933,11 @@ section {
 }
 
 /* 유영 */
+.youyoung {
+    width: 100%;
+}
 .youyoung .uowrap {
-    max-width: 1050px;
+    max-width: 1100px;
     height: auto;
     display: flex;
     background-color: #f5fdc7;
