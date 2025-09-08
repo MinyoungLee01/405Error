@@ -297,16 +297,18 @@ section {
 
 /* 연정 */
 
-.yeonjeong {
-    position: relative;
-}
-
 @font-face {
     font-family: 'YoonChoWooSan';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2') format('woff2');
     font-weight: normal;
     font-display: swap;
 }
+
+.yeonjeong {
+    position: relative;
+    font-family: 'YoonChoWooSan';
+}
+
 
 
 .yeonjeong .yjbg img {
@@ -319,14 +321,14 @@ section {
 .yeonjeong .yjbg h1 {
     position: absolute;
     left: 40%;
-    top: 16%;
+    top: 18%;
 }
 
 .yeonjeong .yjbg p {
     position: absolute;
     width: 400px;
     left: 40%;
-    top: 22%;
+    top: 25%;
     font-size: 16px;
     font-weight: 600;
 }
@@ -774,6 +776,7 @@ section {
     transform: translateY(260px);
     border-radius: 50px;
     padding: 1rem;
+    margin-bottom: 1rem;
 }
 
 .gh-bg>.container>.text>p {
@@ -855,6 +858,8 @@ section {
 /* 민영Vv */
 .minyoung {
     background-color: rgb(154, 201, 180);
+    background: url(../imgae/mypt.jpg) no-repeat center/cover;
+    border: 4px solid rgb(177, 197, 177);
     max-width: 950px;
     margin: 0 auto;
     color: #222;
@@ -864,12 +869,13 @@ section {
 }
 
 .minyoung h1 {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .minyoung p {
     font-size: 16px;
 }
+
 .minyoung h2 {
     font-size: 16px;
     font-weight: 700;
@@ -898,7 +904,30 @@ section {
     margin: 30px 0;
 }
 
- .youngju p {
+.youngju p {
     font-size: 16px;
     font-weight: 600;
+}
+
+/* 승재 */
+.lsj .box {
+    background: url('../imgae/ph.jpg')no-repeat center;
+    width: 100%;
+    height: 1080px;
+    position: relative;
+}
+
+.lsj .textbox {
+    position: absolute;
+    text-align: center;
+    transform: translate(-50%, 10%);
+    top: 5%;
+    left: 50%;
+}
+
+.lsj p {
+    color: brown;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
 }
