@@ -1,0 +1,904 @@
+@charset "utf-8";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --paper: #FAF9EE;
+    --ink: #222;
+    --wax: #C4332E;
+    --wax-dark: #8E1E1A;
+    --wax-glow: #ff8c7f;
+}
+
+section {
+    padding: 5rem;
+}
+
+.door-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* 왼쪽 오른쪽 문 */
+.door-left,
+.door-right {
+    flex: 1;
+    background-color: #f7d162;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'mk-paper';
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    animation: none;
+}
+
+/* 문 안 텍스트 */
+.door-text {
+    animation: fadeInOut 2s ease-in-out forwards;
+}
+
+/* 왼쪽 문 */
+.door-left {
+    background: url('../imgae/intro.jpg') no-repeat center/cover;
+    animation: openLeft 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* 오른쪽 문 */
+.door-right {
+    background: url('../imgae/intro2.jpg');
+    animation: openRight 2.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+/* 문 열리는 방향  */
+@keyframes openLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes openRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* 효민 */
+
+@font-face {
+    font-family: 'IsYun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.hoymin {
+    font-family: 'IsYun';
+    background-color: #fdfcf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-hyomin {
+    background: #fff;
+    border: 3px solid #e5d7b3;
+    border-radius: 16px;
+    padding: 50px;
+    max-width: 700px;
+    box-shadow: 3px 6px 15px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+}
+
+.letter-hyomin h2 {
+    text-align: center;
+    color: #5a4632;
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.letter-hyomin p {
+    line-height: 1.8;
+    margin: 18px 0;
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.from-hyomin {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 24px;
+    color: #555;
+}
+
+/* 지수 */
+
+.jisoo-letter {
+    padding: 5rem;
+    text-align: center;
+}
+
+.jisoo-letter .poohgif {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.jisoo-letter .bee {
+    padding: 5rem;
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+}
+
+.jisoo-text {
+    background: url('../imgae/jisoobg.jpg')no-repeat center/cover;
+    width: 50%;
+    height: 50%;
+    padding: 7rem;
+    margin: 0 auto;
+}
+
+.jisoo-text>h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.jisoo-text>p {
+    font-size: 1.5rem;
+}
+
+/* 미경 */
+
+@font-face {
+    font-family: 'mk-font';
+    src: url('../font/부크크명조_굵은글씨.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mk-paper';
+    src: url('../font/Paperlogy-4Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.mk-container {
+    background-color: #fdf3dc;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px 20px;
+    position: relative;
+    text-align: center;
+}
+
+.mk-top-space {
+    height: 80px;
+    font-family: 'mk-paper';
+    color: #837c78;
+}
+
+.mk-top-space h1 span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #e0645f;
+}
+
+.mk-top-space h1 .tea {
+    color: #f7d162;
+}
+
+.mk-border-box {
+    width: 350px;
+    height: 30px;
+    background-color: #fff;
+    margin: -15px auto;
+    border-radius: 50px;
+}
+
+.mk-gif-left,
+.mk-gif-right {
+    position: absolute;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.mk-gif-left {
+    left: 10px;
+}
+
+.mk-gif-right {
+    right: 10px;
+}
+
+.mk-pooh img {
+    width: 100%;
+    height: auto;
+}
+
+.mk-pooh:hover img {
+    content: url('../imgae/mk-hover.png');
+    cursor: pointer;
+}
+
+.mk-message-box {
+    background-color: #f8aadd;
+    color: white;
+    padding: 50px 20px;
+    margin-top: -100px;
+    border-radius: 20px 20px 0 0;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.mk-text {
+    margin-top: 25px;
+    font-family: 'mk-font';
+}
+
+.mk-scroll-text-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mk-scroll-text {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scroll 10s linear infinite;
+    font-size: 1.2rem;
+    font-family: 'mk-paper';
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* 연정 */
+
+.yeonjeong {
+    position: relative;
+}
+
+@font-face {
+    font-family: 'YoonChoWooSan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+
+.yeonjeong .yjbg img {
+    width: 632px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+.yeonjeong .yjbg h1 {
+    position: absolute;
+    left: 40%;
+    top: 16%;
+}
+
+.yeonjeong .yjbg p {
+    position: absolute;
+    width: 400px;
+    left: 40%;
+    top: 22%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.yeonjeong .yjbg p span {
+    font-weight: 800;
+    font-size: 23px;
+}
+
+/* 정민 */
+@font-face {
+    font-family: 'GangwonEducationHyunokSam';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduHyeonokT_OTFMediumA.woff') format('woff');
+    font-weight: normal;
+    font-display: swap;
+}
+
+.jm-inner {
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: rgb(158, 226, 253);
+    padding: 50px;
+    position: relative;
+    border-radius: 30px;
+}
+
+.jm-to {
+    font-family: 'GangwonEducationHyunokSam';
+    font-size: 50px;
+}
+
+.jeongmin p {
+    font-family: 'GangwonEducationHyunokSam';
+    font-size: 30px;
+}
+
+.jm-txt {
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.jm-from {
+    text-align: right;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+/* 혜수 */
+
+.hyesoo {
+    margin: 0;
+    color: var(--ink);
+    font-family: system-ui, "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+.YUNHYESOO-bg {
+    width: 100%;
+    min-height: auto;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, .35), rgba(255, 255, 255, .35)),
+        url("/YUNHYESOO.jpg") center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+}
+
+
+.YUNHYESOO {
+    width: 90%;
+    max-width: 1080px;
+    height: auto;
+    background: var(--paper);
+    border-radius: 16px 16px 16px 48px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
+    overflow: visible;
+}
+
+.YUNHYESOO>summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 18px 22px;
+    background:
+        radial-gradient(35% 35% at 18% 30%, rgba(255, 255, 255, .35), transparent 60%),
+        linear-gradient(180deg, #fbf8ea, #f1ead4);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    user-select: none;
+    outline: none;
+}
+
+.YUNHYESOO-heart {
+    padding: 10px 14px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+        inset 0 6px 12px rgba(0, 0, 0, .25),
+        0 6px 12px rgba(0, 0, 0, .25);
+    background:
+        radial-gradient(35% 35% at 35% 35%, var(--wax-glow), transparent 60%),
+        radial-gradient(120% 120% at 50% 60%, var(--wax) 0 60%, var(--wax-dark) 100%);
+}
+
+.YUNHYESOO-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.YUNHYESOO-body {
+    width: 100%;
+    height: auto;
+    display: none;
+    padding: 0 22px 18px;
+    line-height: 1.75;
+    background:
+        repeating-linear-gradient(to bottom,
+            transparent 0 28px,
+            rgba(0, 0, 0, .045) 28px 29px);
+    overflow: visible;
+}
+
+.YUNHYESOO[open] .YUNHYESOO-body {
+    display: block;
+}
+
+.YUNHYESOO-body>.YUNHYESOO-inner {
+    padding-top: 18px;
+}
+
+.YUNHYESOO h1 {
+    margin: 6px 0 12px;
+    font-size: 24px;
+}
+
+.YUNHYESOO p {
+    margin: 0 0 16px;
+    font-size: 16px;
+}
+
+.YUNHYESOO h5 {
+    margin: 8px 0 0;
+    font-weight: 600;
+}
+
+.YUNHYESOO>summary::-webkit-details-marker,
+.YUNHYESOO>summary::marker {
+    display: none;
+    content: "";
+}
+
+/* 서윤 */
+
+@font-face {
+    font-family: 'YanoneKaffeesatzRegular';
+    src: url('yanonekaffeesatz-regular-webfont.eot');
+    src: url('yanonekaffeesatz-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('yanonekaffeesatz-regular-webfont.woff') format('woff'),
+        url('yanonekaffeesatz-regular-webfont.ttf') format('truetype'),
+        url('yanonekaffeesatz-regular-webfont.svg#YanoneKaffeesatzRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.seoyoon {
+    background: #ccc url('../imgae/sy-bg.jpg') no-repeat center/100%;
+    color: #7c7873;
+    font-family: 'YanoneKaffeesatzRegular';
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 10rem;
+}
+
+.sy_letter p {
+    text-shadow: 0 1px 0 #fff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.sy_letter span {
+    font-size: 17px;
+    display: block;
+    word-break: break-all;
+}
+
+.seoyoon #sywrap {
+    position: absolute;
+    width: 530px;
+    margin: 250px;
+    height: 1000px;
+    cursor: pointer;
+}
+
+#sy_inner {
+    overflow: hidden;
+    height: 446px;
+    position: relative;
+    top: 0px;
+    -webkit-transition: all 1s ease-in-out .3s;
+    -moz-transition: all 1s ease-in-out .3s;
+    -o-transition: all 1s ease-in-out .3s;
+    transition: all 1s ease-in-out .3s;
+}
+
+#sy_inner:before {
+    content: "";
+    position: absolute;
+    bottom: 128px;
+    left: 0px;
+    background: url('../imgae/sy-before.png');
+    width: 530px;
+    height: 316px;
+}
+
+#sy_inner:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    background: url('../imgae/sy-after.png');
+    width: 530px;
+    height: 260px;
+}
+
+#sy_inner.hide:after,
+#sy_inner.hide:before {
+    display: none;
+}
+
+#sy_inner:hover {
+    height: 776px;
+    top: -200px;
+}
+
+.sy_letter {
+    background: #f7f2ec url('../imgae/sy-letter_bg.png');
+    position: relative;
+    top: 200px;
+    overflow: hidden;
+    height: 400px;
+    width: 400px;
+    margin: 0px auto;
+    padding: 20px;
+    border: 1px solid #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 27px #fff;
+    -moz-box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 14px #fff;
+    -webkit-box-shadow: 0px 0px 3px #9d9d9d, inset 0px 0px 27px #fff;
+    -webkit-transition: all 1s ease-in-out .3s;
+    -moz-transition: all 1s ease-in-out .3s;
+    -o-transition: all 1s ease-in-out .3s;
+    transition: all 1s ease-in-out .3s;
+}
+
+#sy_inner:hover .sy_letter {
+    height: 1300px;
+}
+
+#sy_inner:hover {
+    height: 1300px;
+    /* sy_letter보다 커야 함 */
+    top: -450px;
+}
+
+/* 희진 */
+
+.heejin {
+    position: relative;
+    background: url('../imgae/696e78351fd86ac4c119d7415d50a197.jpg') no-repeat center /cover;
+    width: 100%;
+}
+
+.hj-title,
+.hj-subtitle {
+    text-align: center;
+}
+
+.hj-title {
+    font-size: 4rem;
+}
+
+.hj-title b {
+    color: red;
+    text-shadow: 5px 5px 2px white;
+    animation: hjtitle 1s infinite reverse;
+}
+
+@keyframes hjtitle {
+    0% {
+        opacity: 50%;
+    }
+}
+
+.hj-subtitle {
+    font-size: 3rem;
+}
+
+.hj-flex {
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+}
+
+.hj-flex>.left-box {
+    background-color: #dadada;
+    padding: 2.5rem;
+    margin-top: 5rem;
+    font-size: 1.3rem;
+    width: 25%;
+    color: #7a7a7a;
+    height: 700px;
+    overflow-y: scroll;
+}
+
+.hj-flex>.left-box::-webkit-scrollbar-thumb {
+    background-color: green;
+}
+
+.hj-flex .right-box {
+    width: 80%;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hj-flex .right-box>.right-img {
+    position: relative;
+    width: 250px;
+    height: 300px;
+}
+
+.hj-flex .right-box>.right-img>span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 1s;
+    cursor: pointer;
+}
+
+.hj-flex .right-box>.right-img>span:hover {
+    opacity: 1;
+}
+
+.hj-flex .hj-img1 {
+    background: url('../imgae/hj1.png')no-repeat center/contain;
+    transform: translateX(-50px) rotate(-10deg);
+}
+
+.hj-flex .hj-img2 {
+    background: url('../imgae/hj2.png')no-repeat center/contain;
+    transform: translateX(-20px);
+}
+
+.hj-flex .hj-img3 {
+    background: url('../imgae/hj3.png')no-repeat center/contain;
+    transform: translateX(30px) rotate(5deg);
+}
+
+.hj-flex .hj-img4 {
+    background: url('../imgae/hj4.jpg')no-repeat center/contain;
+    transform: translateX(100px) rotate(10deg);
+}
+
+.hj-flex .hj-img5 {
+    background: url('../imgae/hj6.jpg')no-repeat center/contain;
+    transform: translateX(-150px) rotate(5deg);
+}
+
+.hj-flex .hj-img6 {
+    background: url('../imgae/hj8.png')no-repeat center/contain;
+    transform: translateX(-80px) rotate(-5deg);
+}
+
+.hj-flex .hj-img7 {
+    background: url('../imgae/hj10.jpg')no-repeat center/contain;
+}
+
+.hj-flex .hj-img8 {
+    background: url('../imgae/hj5.png')no-repeat center/contain;
+    transform: translateX(150px) rotate(-10deg);
+}
+
+.heejin-animation {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 70px;
+    background-color: #f0e43c;
+}
+
+.heejin-animation>p {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2.7;
+    font-weight: 600;
+}
+
+/* 가현 */
+.gh {
+    margin-top: 5rem;
+}
+
+.gh-bg>.container {
+    background: url('../imgae/가현.png') no-repeat center / cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gh-bg>.container>.text {
+    background-color: #000;
+    opacity: 0.6;
+    backdrop-filter: blur(4px);
+    width: 1200px;
+    height: auto;
+    transform: translateY(260px);
+    border-radius: 50px;
+    padding: 1rem;
+}
+
+.gh-bg>.container>.text>p {
+    text-align: left;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: fit-content;
+    padding: 10px 0;
+}
+
+/* 수진 */
+
+.soojin {
+    background: #fffafc;
+    text-align: center;
+    padding: 50px;
+}
+
+.sj-letter {
+    background-color: rgb(255, 230, 0);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: float 3s ease-in-out infinite;
+}
+
+.sj-letter h1 {
+    color: #000000;
+    font-size: 2.2em;
+}
+
+.sj-letter p {
+    color: #444;
+    font-size: 1.2em;
+    line-height: 1.6em;
+}
+
+/* .footer {
+    margin-top: 20px;
+    font-size: 1em;
+    color: #999;
+} */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.cute {
+    font-size: 2em;
+    animation: bounce 1.5s infinite;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 민영Vv */
+.minyoung {
+    background-color: rgb(154, 201, 180);
+    max-width: 950px;
+    margin: 0 auto;
+    color: #222;
+    line-height: 1.7;
+    border-radius: 10px;
+    position: relative;
+}
+
+.minyoung h1 {
+    font-size: 25px;
+}
+
+.minyoung p {
+    font-size: 16px;
+}
+.minyoung h2 {
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* 영듀 */
+
+.youngju {
+    margin: 100px auto;
+    padding: 20px;
+    width: 550px;
+    height: 650px;
+    background-color: white;
+    background: url(../imgae/bg2.jpg) no-repeat bottom/cover;
+    border-radius: 20px;
+    border: 2px solid plum;
+}
+
+.youngju h3 {
+    margin: 30px 0;
+}
+
+.youngju h4 {
+    text-align: right;
+    margin: 30px 0;
+}
+
+ .youngju p {
+    font-size: 16px;
+    font-weight: 600;
+}
